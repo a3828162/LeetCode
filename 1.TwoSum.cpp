@@ -1,3 +1,4 @@
+#include<hash_map>
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -22,16 +23,17 @@ public:
         }
         return ans;*/
 
-        map<int, int> dic; // solution 2 O(n)
+        /*map<int, int> dic; 
         vector<int> ans;
 
         for (int i = 0; i < nums.size(); dic[nums[i]] = i, ++i)
-            if (dic.find(target - nums[i]) != dic.end())
-            {
-                if ((target - nums[i]) > nums[i]) ans.push_back(i), ans.push_back(dic[target - nums[i]]);
-                else ans.push_back(dic[target - nums[i]]), ans.push_back(i);
-                break;
-            }
+            if (dic.find(target - nums[i]) != dic.end()) { ans.push_back(dic[target - nums[i]]), ans.push_back(i); break; }*/
+        
+        __gnu_cxx::hash_map<int, int> dic; // solution 2 O(n)
+        vector<int> ans;
+
+        for (int i = 0; i < nums.size(); dic[nums[i]] = i, ++i)
+            if (dic.find(target - nums[i]) != dic.end()) { ans.push_back(dic[target - nums[i]]), ans.push_back(i); break; }
         return ans;
     }
 };
