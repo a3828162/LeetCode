@@ -21,6 +21,7 @@ public:
     int FindHeight(TreeNode* node)
     {
         if(!node) return 0;
-        else return max(FindHeight(node->left),FindHeight(node->right)) + 1;
+		
+        return max(FindHeight(node->left),FindHeight(node->right)) + 1;
     }
 };
