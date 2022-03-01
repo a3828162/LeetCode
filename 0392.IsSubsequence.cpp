@@ -4,7 +4,7 @@ public:
         
         int count = 0;
         
-        for( int i=0; i < t.size() && count < s.size(); ++i) if( s[count] == t[i] ) ++count;
+        for( int i = 0; i < t.size() && count < s.size(); ++i) if( s[count] == t[i] ) ++count;
 			
         return count == s.size() ? true : false;
     }
